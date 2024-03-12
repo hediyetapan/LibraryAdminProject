@@ -1,0 +1,26 @@
+<div class="card">
+ <div class="card-header">Search Customer's Rental History</div>
+ <div class="card-body">
+   <div class="row">
+     <div class="row col-sm-6">
+       <label for="bookName" class="col-sm-4">Customer Name:</label>
+       <input type="text" class="col-sm-8" placeholder="Customer Name" ngModel #customerName id="customerName" list="customerOptions">
+       <datalist id="customerOptions">
+        <option *ngFor="let customer of filteredCustomers" [value]="customer.firstName + ' ' + customer.lastName"></option>
+      </datalist>
+      </div>
+     <div class="table-scroll col-sm-6">
+       <div *ngFor="let rental of rentals">
+         {{getBookName(rental.bookId,rental.rentDate,rental.deliverDate)}}
+       </div>
+     </div>
+   </div>
+   
+
+ </div>
+ <div class="card-footer">
+   <button (click)="onSearch()">
+     Search
+   </button>
+ </div>
+</div>

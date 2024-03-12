@@ -1,0 +1,22 @@
+<!--app-navbar (showItems)="listBooks($event)" (chosenPage)="openPage($event)"></app-navbar-->
+<app-navbar (chosenPage)="openPage($event)"></app-navbar>
+
+<div *ngIf="chosenPage == 'books'">
+ <app-books [searchedItem]="displayedBooks"></app-books>
+ <!--app-searched-books [searchedString]="displayedBooks" *ngIf="(displayedBooks != undefined)" ></app-searched-books-->
+
+ <div class="row d-flex">
+  <app-rent-book class="col-sm-6"></app-rent-book>
+  <app-deliver-book class="col-sm-6"></app-deliver-book>
+ </div>
+ <app-search-book></app-search-book>
+</div>
+
+<div *ngIf="chosenPage == 'customers'">
+ <app-customers></app-customers>
+
+
+  <app-customer-current-rentals></app-customer-current-rentals>
+  <app-customer-rental-history></app-customer-rental-history>
+  <app-search-customer></app-search-customer>
+</div>

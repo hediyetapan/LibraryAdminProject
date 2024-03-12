@@ -1,0 +1,63 @@
+<div class="card">
+ <div class="card-header border-transparent">
+  <h3 class="card-title">Customers</h3>
+ </div>
+
+ <div class="card-body p-0">
+  <div class="table-responsive table-scroll">
+   <table class="table m-0">
+    <thead>
+     <tr>
+      <th></th>
+      <th (click)="onClick()">First Name</th>
+      <th>Last Name</th>
+      <th>Email</th>
+      <th>Address</th>
+     </tr>
+    </thead>
+    <tbody>
+
+     <tr>
+      <td><button (click)="addNewCustomer()">Add Customer</button></td>
+      <td><input type="text" placeholder="Firstname" [(ngModel)]="addedCustomer.firstName"></td>
+      <td><input type="text" placeholder="Lastname" [(ngModel)]="addedCustomer.lastName"></td>
+      <td><input type="text" placeholder="Email" [(ngModel)]="addedCustomer.email"></td>
+      <td><input type="text" placeholder="Address" [(ngModel)]="addedCustomer.address"></td>
+     </tr>
+     
+      <tr *ngFor="let customer of customers">
+       <td>
+        <!--fa-icon [icon]="deleteIcon"
+       (click)="deleteBook(book.id)"></fa-icon-->
+        <app-delete-customer [customerId]="customer.id"></app-delete-customer>
+        <fa-icon [icon]="updateIcon" (click)='startEditing(customer)' *ngIf="!isEditing(customer)"></fa-icon>
+        <button *ngIf="isEditing(customer)" (click)="saveChanges(customer)">Save</button>
+        <button *ngIf="isEditing(customer)" (click)="cancelChanges(customer)">Discard</button>
+       </td>
+       <td *ngIf="!isEditing(customer)">{{customer.firstName}}</td>
+       <td *ngIf="isEditing(customer)"><input type="text" placeholder="{{customer.firstName}}"
+         [(ngModel)]="customer.firstName"></td>
+       <td *ngIf="!isEditing(customer)">{{customer.lastName}}</td>
+       <td *ngIf="isEditing(customer)"><input type="text" placeholder="{{customer.lastName}}"
+         [(ngModel)]="customer.lastName"></td>
+       <td *ngIf="!isEditing(customer)">{{customer.email}}</td>
+       <td *ngIf="isEditing(customer)"><input type="text" placeholder="{{customer.email}}" [(ngModel)]="customer.email">
+       </td>
+       <td *ngIf="!isEditing(customer)">{{customer.address}}</td>
+       <td *ngIf="isEditing(customer)"><input type="text" placeholder="{{customer.address}}"
+         [(ngModel)]="customer.address"></td>
+      </tr>
+     
+     
+    </tbody>
+   </table>
+  </div>
+
+ </div>
+
+ <!--div class="card-footer clearfix">
+  <a href="javascript:void(0)" class="btn btn-sm btn-info float-left">Place New Order</a>
+  <a href="javascript:void(0)" class="btn btn-sm btn-secondary float-right">View All Orders</a>
+ </div-->
+
+</div>

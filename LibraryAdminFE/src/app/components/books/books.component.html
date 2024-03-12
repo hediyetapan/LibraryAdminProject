@@ -1,0 +1,90 @@
+<div class="card">
+ <div class="card-header border-transparent">
+  <h3 class="card-title">Books</h3>
+ </div>
+
+ <div class="card-body p-0">
+  <div class="table-responsive table-scroll">
+   <table class="table m-0">
+    <thead>
+     <tr>
+      <th></th>
+      <th (click)="onClick()">Name</th>
+      <th>Publisher</th>
+      <th>Year</th>
+      <th>Availability</th>
+     </tr>
+    </thead>
+    <tbody *ngIf="!searchedItem">
+     <tr>
+      <td></td>
+      <td><input type="text" placeholder="Book Name" [(ngModel)]="addedBook.name"></td>
+      <td><input type="text" placeholder="Publisher" [(ngModel)]="addedBook.publisher"></td>
+      <td><input type="text" placeholder="Publish Year" [(ngModel)]="addedBook.publishYear"></td>
+      <td><button (click)="addNewBook()">Add Book</button></td>
+     </tr>
+     <tr *ngFor="let book of books">
+      <td>
+       <!--fa-icon [icon]="deleteIcon"
+       (click)="deleteBook(book.id)"></fa-icon-->
+       <app-delete-book (click)="deleteClicked()" [bookId]="book.id"></app-delete-book>
+       <fa-icon [icon]="updateIcon" (click)='startEditing(book)' *ngIf="!isEditing(book)"></fa-icon>
+       <button *ngIf="isEditing(book)" (click)="saveChanges(book)">Save</button>
+       <button *ngIf="isEditing(book)" (click)="cancelChanges(book)">Discard</button>
+      </td>
+      <td *ngIf="!isEditing(book)">{{book.name}}</td>
+      <td *ngIf="isEditing(book)"><input type="text" placeholder="{{book.name}}" [(ngModel)]="book.name"></td>
+      <td *ngIf="!isEditing(book)">{{book.publisher}}</td>
+      <td *ngIf="isEditing(book)"><input type="text" placeholder="{{book.publisher}}" [(ngModel)]="book.publisher"></td>
+      <td *ngIf="!isEditing(book)">{{book.publishYear}}</td>
+      <td *ngIf="isEditing(book)"><input type="text" placeholder="{{book.publishYear}}" [(ngModel)]="book.publishYear">
+      </td>
+      <td *ngIf="!isEditing(book)"><app-rented-by [inbook]="book"></app-rented-by></td>
+      <td *ngIf="isEditing(book)"><app-rented-by [inbook]="book"></app-rented-by></td>
+     </tr>
+     <!--tr *ngIf="updateBook">
+      <app-update-book *ngIf="updateBook" [bookToBeUpdated]="bookToBeUpdated"></app-update-book>
+     </tr-->
+
+    </tbody>
+    <tbody *ngIf="searchedItem">
+     <tr *ngFor="let book of filteredBooks()">
+      <td>
+       <!--fa-icon [icon]="deleteIcon"
+       (click)="deleteBook(book.id)"></fa-icon-->
+       <app-delete-book (click)="deleteClicked()" [bookId]="book.id" [bookId]="deletedBookId"></app-delete-book>
+       <fa-icon [icon]="updateIcon" (click)='startEditing(book)' *ngIf="!isEditing(book)"></fa-icon>
+       <button *ngIf="isEditing(book)" (click)="saveChanges(book)">Save</button>
+       <button *ngIf="isEditing(book)" (click)="cancelChanges(book)">Discard</button>
+      </td>
+      <td *ngIf="!isEditing(book)">{{book.name}}</td>
+      <td *ngIf="isEditing(book)"><input type="text" placeholder="{{book.name}}" [(ngModel)]="book.name"></td>
+      <td *ngIf="!isEditing(book)">{{book.publisher}}</td>
+      <td *ngIf="isEditing(book)"><input type="text" placeholder="{{book.publisher}}" [(ngModel)]="book.publisher"></td>
+      <td *ngIf="!isEditing(book)">{{book.publishYear}}</td>
+      <td *ngIf="isEditing(book)"><input type="text" placeholder="{{book.publishYear}}" [(ngModel)]="book.publishYear">
+      </td>
+      <td *ngIf="!isEditing(book)"><app-rented-by [inbook]="book"></app-rented-by></td>
+      <td *ngIf="isEditing(book)"><app-rented-by [inbook]="book"></app-rented-by></td>
+     </tr>
+     <!--tr *ngIf="updateBook">
+      <app-update-book *ngIf="updateBook" [bookToBeUpdated]="bookToBeUpdated"></app-update-book>
+     </tr-->
+     <tr>
+      <td></td>
+      <td><input id="addBookName" name="addBookName" type="text" placeholder="Book Name" [(ngModel)]="addedBook.name">
+      </td>
+      <td><input id="addBookPublisher" name="addBookPublisher" type="text" placeholder="Publisher"
+        [(ngModel)]="addedBook.publisher"></td>
+      <td><input id="addBookYear" name="addBookYear" type="text" placeholder="Publish Year"
+        [(ngModel)]="addedBook.publishYear"></td>
+      <td><button (click)="addNewBook()">Add Book</button></td>
+     </tr>
+    </tbody>
+   </table>
+  </div>
+
+ </div>
+</div>
+
+<!--Deletion Modal:-->

@@ -1,0 +1,29 @@
+<div class="card">
+ <div class="card-header">Rent Book</div>
+ <div class="card-body">
+  <div class="row">
+   <label for="bookName" class="col-sm-4">Book Name:</label>
+   <input type="text" class="col-sm-8" placeholder="Book Name" ngModel #bookName id="bookName"
+    list="bookOptions">
+    <datalist id="bookOptions">
+      <option *ngFor="let book of filteredBooks" [value]="book.name">
+      </option>
+    </datalist>
+  </div>
+  <div class="row">
+   <!--p *ngIf="onRentCheck() == 'Customer Does Not Exist'">*Customer does not exist</p-->
+   <label for="customerName" class="col-sm-4">Customer Name:</label>
+   <input type="text" class="col-sm-8" placeholder="Customer Name" ngModel #customerName id="customerName"
+    list="customerOptions">
+    <datalist id="customerOptions">
+      <option *ngFor="let customer of filteredCustomers" [value]="customer.firstName + ' ' + customer.lastName">
+      </option>
+    </datalist>
+  </div>
+ </div>
+ <div class="card-footer">
+  <button (click)="onRent()">
+   Rent Book
+ </button>
+</div>
+</div>

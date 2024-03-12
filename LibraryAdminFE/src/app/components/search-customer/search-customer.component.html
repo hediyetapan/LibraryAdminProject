@@ -1,0 +1,31 @@
+<div class="card">
+ <div class="card-header">Search Customers</div>
+ <div class="card-body">
+   <div class="row">
+     <div class="row col-sm-6">
+       <!--p *ngIf="onRentCheck() == 'Book Does Not Exist'">*Book does not exist</p-->
+       <!--p *ngIf="onSearchCheck() == 'Book Is Currently Rented'">Book is already rented</p-->
+       <label for="searchCriteria" class="col-sm-4">Search Criteria:</label>
+       <select name="searchCriteria" id="searchCriteria" class="col-sm-8" ngModel #searchCriteria>
+         <option value="customerFullName">Customer Full Name</option>
+         <option value="customerEmail">Customer Email</option>
+         <option value="customerAddress">Customer Address</option>
+       </select>
+       <label for="searchItem" class="col-sm-4">Search:</label>
+       <input type="text" class="col-sm-8" ngModel #searchItem id="searchItem">
+     </div>
+     <div class="table-scroll col-sm-6">
+       <div *ngFor="let customer of filteredCustomers">
+         {{getCustomer(customer.id)}}
+       </div>
+     </div>
+   </div>
+
+
+ </div>
+ <div class="card-footer">
+   <button (click)="onSearch()">
+     Search
+   </button>
+ </div>
+</div>

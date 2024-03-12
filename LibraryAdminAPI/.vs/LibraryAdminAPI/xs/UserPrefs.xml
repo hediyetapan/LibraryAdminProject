@@ -1,0 +1,32 @@
+﻿<Properties StartupConfiguration="{CF538223-3D35-4781-9B9B-5CBC1A975CEE}|Default">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.LibraryAdminAPI PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/hediyetapan/Desktop/cs/LibraryAdminProject/LibraryAdminAPI/LibraryAdminAPI/Controllers/CustomerController.cs" relfile="LibraryAdminAPI/Controllers/CustomerController.cs" line="13" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workbench ActiveDocument="LibraryAdminAPI/Program.cs">
+    <Files>
+      <File FileName="LibraryAdminAPI/Controllers/BookController.cs" />
+      <File FileName="LibraryAdminAPI/Properties/launchSettings.json" />
+      <File FileName="LibraryAdminAPI/Program.cs" Line="13" Column="15" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="LibraryAdminAPI" expanded="True">
+            <Node name="LibraryAdminAPI" expanded="True">
+              <Node name="Dependencies" expanded="True" />
+              <Node name="Controllers" expanded="True" />
+              <Node name="Properties" expanded="True" />
+              <Node name="appsettings.json" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

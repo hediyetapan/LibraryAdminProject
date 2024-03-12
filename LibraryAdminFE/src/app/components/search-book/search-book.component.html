@@ -1,0 +1,31 @@
+<div class="card">
+  <div class="card-header">Search Books</div>
+  <div class="card-body">
+    <div class="row">
+      <div class="row col-sm-6">
+        <!--p *ngIf="onRentCheck() == 'Book Does Not Exist'">*Book does not exist</p-->
+        <!--p *ngIf="onSearchCheck() == 'Book Is Currently Rented'">Book is already rented</p-->
+        <label for="searchCriteria" class="col-sm-4">Search Criteria:</label>
+        <select name="searchCriteria" id="searchCriteria" class="col-sm-8" ngModel #searchCriteria>
+          <option value="bookName">Book Name</option>
+          <option value="publisher">Publisher</option>
+          <option value="publishYear">Publish Year</option>
+        </select>
+        <label for="searchItem" class="col-sm-4">Search:</label>
+        <input type="text" class="col-sm-8" ngModel #searchItem id="searchItem">
+      </div>
+      <div class="table-scroll col-sm-6">
+        <div *ngFor="let book of filteredBooks">
+          {{getBook(book.id)}} - <app-rented-by [inbook]="book"></app-rented-by>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+  <div class="card-footer">
+    <button (click)="onSearch()">
+      Search
+    </button>
+  </div>
+</div>

@@ -1,0 +1,4 @@
+.table-scroll {
+ max-height: 300px; /* Set the desired height for the table container */
+ overflow-y: auto; /* Enable vertical scrollbar */
+}

@@ -1,0 +1,23 @@
+<div class="card">
+ <div class="card-header">Deliver Book</div>
+ <div class="card-body">
+  <div class="row">
+   <!--p *ngIf="onDeliverCheck() == 'Book Does Not Exist'">*Book does not exist</p-->
+   <p *ngIf="onDeliverCheck() == 'Book Is Not Rented'">Book is not rented</p>
+   <label for="bookName" class="col-sm-4">Book Name:</label>
+   <input type="text" class="col-sm-8" placeholder="Book Name" ngModel #bookName id="bookName">
+  </div>
+  <div class="row">
+   <!--p *ngIf="onDeliverCheck() == 'Customer Does Not Exist'">*Customer does not exist</p-->
+   <p *ngIf="onDeliverCheck() == 'Rental Mismatch'">Book is not rented by this customer</p>
+   <label for="customerName" class="col-sm-4">Customer Name:</label>
+   <input type="text" class="col-sm-8" placeholder="Customer Name" ngModel #customerName id="customerName">
+  </div>
+  <p [ngClass]=""></p>
+ </div>
+ <div class="card-footer">
+  <button (click)="onDeliver()">
+   Deliver Book
+ </button>
+</div>
+</div>
