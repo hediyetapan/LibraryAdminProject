@@ -22,4 +22,6 @@
 <h4>Install Node.js and npm</h4>
 <h6>Download and install Node.js from the official website.</h6>
 <h6>Verify the installation by running the following commands in your terminal or command prompt:</h6>
-`node -v`
+```
+node -v
+```
