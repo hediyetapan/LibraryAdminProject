@@ -32,3 +32,11 @@
 <h6>Download and install the .NET SDK from the official website.
 Verify the installation by running the following command:</h6>
 <code>dotnet --version</code>
+<h4>Install Docker Desktop</h4>
+<h6>Download and install Docker Desktop from the official website.
+Follow the installation instructions for your operating system.</h6>
+<h4>Clone Repository</h4>
+<code>
+  cd _destination_folder_
+  git clone repository_url>
+</code>
