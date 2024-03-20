@@ -17,3 +17,9 @@
   <ul>Docker Desktop</ul>
   <ul>Azure Data Studio (optional)</ul>
 </li>
+<h2>Installation Steps</h2>
+<h3>Prerequisites Installation</h3>
+<h4>Install Node.js and npm</h4>
+<h6>Download and install Node.js from the official website.</h6>
+<h6>Verify the installation by running the following commands in your terminal or command prompt:</h6>
+`node -v`
