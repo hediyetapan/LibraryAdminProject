@@ -36,7 +36,6 @@ Verify the installation by running the following command:</h6>
 <h6>Download and install Docker Desktop from the official website.
 Follow the installation instructions for your operating system.</h6>
 <h4>Clone Repository</h4>
-<code>
-  cd _destination_folder_
-  git clone repository_url>
-</code>
+<h6>Navigate to the folder you want to clone the repository in and clone the project.</h6>
+<code>cd _destination_folder_</code><br>
+<code>git clone https://github.com/hediyetapan/LibraryAdminProject</code>
