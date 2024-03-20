@@ -17,11 +17,18 @@
   <ul>Docker Desktop</ul>
   <ul>Azure Data Studio (optional)</ul>
 </li>
+
 <h2>Installation Steps</h2>
 <h3>Prerequisites Installation</h3>
 <h4>Install Node.js and npm</h4>
 <h6>Download and install Node.js from the official website.</h6>
 <h6>Verify the installation by running the following commands in your terminal or command prompt:</h6>
-```
-node -v
-```
+<code>node -v</code>
+<code>npm -v</code>
+<h4>Install Angular CLI</h4>
+<h6>Install Angular CLI globally using npm:</h6>
+<code>npm install -g @angular/cli</code>
+<h4>Install .NET SDK</h4>
+<h6>Download and install the .NET SDK from the official website.
+Verify the installation by running the following command:</h6>
+<code>dotnet --version</code>
