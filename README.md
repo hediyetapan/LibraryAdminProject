@@ -39,3 +39,4 @@ Follow the installation instructions for your operating system.</h6>
 <h6>Navigate to the folder you want to clone the repository in and clone the project.</h6>
 <code>cd _destination_folder_</code><br>
 <code>git clone https://github.com/hediyetapan/LibraryAdminProject</code>
+<h6>to be continued...</h6>
